@@ -119,7 +119,23 @@ def format_kr_number(num):
 
 if not st.session_state["api_key"]:
     st.warning("⚠️ 왼쪽 사이드바에 'YouTube Data API Key'를 입력해주세요.")
-    st.info("키는 [구글 클라우드 콘솔](https://console.cloud.google.com/)에서 발급받을 수 있습니다.")
+    st.info("""
+    **[🎬 YouTube API 키 무료로 받는 법]**
+
+    1. **접속**: [구글 클라우드 콘솔](https://console.cloud.google.com/)에 들어가서 구글 아이디로 로그인해.
+    2. **프로젝트 생성**:
+        - 화면 왼쪽 위 로고 옆에 있는 `▼` 버튼 클릭 -> **`새 프로젝트`** 클릭.
+        - 이름은 아무거나(예: `youtube-test`) 적고 **`만들기`**.
+    3. **API 켜기**:
+        - 화면 맨 위 **검색창**에 `YouTube Data API v3` 라고 검색해.
+        - 나오는 결과를 클릭하고, 파란색 **`사용(Enable)`** 버튼 클릭.
+    4. **키 발급**:
+        - 로딩이 끝나면 왼쪽 메뉴에서 **`사용자 인증 정보`** (열쇠 모양 아이콘) 클릭.
+        - 위쪽 **`+ 사용자 인증 정보 만들기`** 누르고 **`API 키`** 선택.
+    5. **완료**:
+        - 화면에 뜨는 `AIz...` 로 시작하는 긴 코드를 복사하면 끝!
+        - (이 키를 아까 그 사이트 왼쪽 칸에 붙여넣으면 돼.)
+    """)
 else:
     if start_search:
         with st.spinner("유튜브 검색 중..."):
